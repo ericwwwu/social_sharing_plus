@@ -60,7 +60,7 @@ public class SocialSharingPlusPlugin: NSObject, FlutterPlugin {
         if let content = arguments["content"] as? String, let imageUri = arguments["media"] as? String {
             shareContentAndImageToSpecificApp(content: content, imageUri: imageUri, appUrlScheme: "fb://publish/profile/me?text=\(content)", webUrlString: "https://www.facebook.com/sharer/sharer.php?u=\(content)", result: result, isOpenBrowser: isOpenBrowser)
         } else if let content = arguments["content"] as? String {
-            let urlString = "fb://publish/profile/me?text=\(content)"
+            let urlString = "fb://composer?link=\(content)"
             let webUrlString = "https://www.facebook.com/sharer/sharer.php?u=\(content)"
             openUrl(urlString: urlString, webUrlString: webUrlString, result: result, isOpenBrowser: isOpenBrowser)
         } else if let imageUri = arguments["media"] as? String {
